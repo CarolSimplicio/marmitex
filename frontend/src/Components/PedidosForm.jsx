@@ -45,20 +45,21 @@ const CadastroForm = () => {
     <Form onSubmit={handleSubmit}>
       <Row>
         <Col>
-          <Form.Control placeholder="IMAGEM" />
+          {/* IMAGEM, NOME E CATEGORIA */}
 
-          <h1 value={formData.nome} />
-          <Badge bg="danger" value={formData.categoria}>Categoria</Badge>
+          <img />
+          <h1 value={formData.nome} /><Badge bg="danger" value={formData.categoria}>Categoria</Badge>
         </Col>
         <Col>
-          <Form.Control placeholder="DESCRIÇÃO E FORMS" />
 
-
+          {/* DESCRIÇÃO */}
           <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" className="mb-3">
             <Tab eventKey="descricao" title="Descricao">
-              <Form.Control type="text" name="descricao" placeholder="Descrição" value={formData.descricao} />
+              <h1 value={formData.descricao} />
             </Tab>
             <Tab eventKey="adicionais" title="Adicionais">
+
+          {/* ADICIONAIS */}
               
               <Accordion defaultActiveKey="0" flush>
                 <Accordion.Item eventKey="0">
@@ -153,7 +154,7 @@ const CadastroForm = () => {
             </Tab>
           </Tabs>
 
-
+            {/* QUANTIDADE E PREÇO DO PEDIDO */}
 
 
           <Form.Control type="number" name="qtd" placeholder="Quantidade" value={formData.qtd} onChange={handleChange} />
