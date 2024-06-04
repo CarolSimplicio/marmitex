@@ -41,6 +41,23 @@ const CadastroForm = () => {
     }
   };
 
+
+  // const TabelaCadastro = () => {
+//   const [pratos, setPratos] = useState([]);
+
+//   useEffect(() => {
+//     const fetchData = async (idPrato) => {
+//       try {
+//         const { data } = await axios.get("http://localhost:3001/pratos/${idPrato}`");
+//         setPratos(data);
+//       } catch (error) {
+//         console.error("Erro ao buscar usuários:", error); // Adiciona este log de erro
+//       }
+//     };
+
+//     fetchData();
+//   }, []);
+
   return (
     <Form onSubmit={handleSubmit}>
       <Row>
@@ -92,19 +109,19 @@ const CadastroForm = () => {
                         label="Carne ou frango"
                         name="group1"
                         type={type}
-                        id={`reverse-${type}-3`}
+                        id={`reverse-${type}-4`}
                       />
                       <Form.Check
                         label="Ovo frito"
                         name="group1"
                         type={type}
-                        id={`reverse-${type}-3`}
+                        id={`reverse-${type}-5`}
                       />
                       <Form.Check
                         label="Farofa"
                         name="group1"
                         type={type}
-                        id={`reverse-${type}-3`}
+                        id={`reverse-${type}-6`}
                       />
                     </div>
                   ))}
@@ -126,26 +143,23 @@ const CadastroForm = () => {
                         label="Coca-cola"
                         name="group1"
                         type={type}
-                        id={`reverse-${type}-1`}
+                        id={`reverse-${type}-7`}
                       />
                       <Form.Check
                         label="Guaraná"
                         name="group1"
                         type={type}
-                        id={`reverse-${type}-2`}
+                        id={`reverse-${type}-8`}
                       />
                       <Form.Check
                         label="Suco natural"
                         name="group1"
                         type={type}
-                        id={`reverse-${type}-3`}
+                        id={`reverse-${type}-9`}
                       />
                     </div>
                   ))}
                 </Form>
-
-
-
                   </Accordion.Body>
                 </Accordion.Item>
               </Accordion>
@@ -158,7 +172,7 @@ const CadastroForm = () => {
 
 
           <Form.Control type="number" name="qtd" placeholder="Quantidade" value={formData.qtd} onChange={handleChange} />
-          <Form.Control type="number" name="preco" placeholder="Preço" value={formData.preco} onChange={handleChange} />
+          <Form.Control type="number" name="precototal" placeholder="PreçoTotal" value={formData.preco} />
           <Button type="submit">Fazer pedido</Button>
         </Col>
       </Row>
