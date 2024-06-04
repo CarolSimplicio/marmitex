@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-//Bootstrap CSS
 import "bootstrap/dist/css/bootstrap.min.css";
 
 //Importar complementos aqui
