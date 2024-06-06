@@ -2,12 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
+  const onClick = () => {
+    window.location.href = "#sliderHome";
+  }
   return (
     <header>
       <nav>
         <ul>
-          <li>
-            <Link to="/">Home</Link>
+          <li >
+            <Link to="/" onClick={onClick}>Home</Link>
           </li>
           {/* <li>
             <Link to="/contato">Contato</Link>

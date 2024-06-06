@@ -1,4 +1,4 @@
-// import lum from '../img/lojaum.jpg';
+import lum from '../Img/batataFrita.jpg';
 // import ldois from '../img/lojadois.jpg';
 // import ltres from '../img/lojatres.png';
 // import lquatro from '../img/lojaquatro.png';
@@ -42,7 +42,7 @@ function Responsive() {
         {
             id: 1,
             hora: "13h - 16h",
-            // img: lum,
+            img: lum,
             nome: "Rua das Pernambucanas - Olinda"
         },
         {
@@ -132,9 +132,9 @@ function Responsive() {
 
     return (
         <>
-            <div className="container text-center mt-4 mb-4">
+            <div className="container mt-4 mb-4">
                 <div className='row mt-4 p-2 mb-4'>
-                    <h3 className='titulo'>Nossas Lojas</h3>
+                    <h3 className='titulo'>Mais Pedidos!🔥</h3>
                 </div>
                 <div className='row justify-content-center mt-4 mb-4 '>
                     <div className='col mb-4'>
