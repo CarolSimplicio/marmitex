@@ -8,6 +8,7 @@ import Perfil from "./Pages/Perfil";
 import Pratos from "./Pages/Descricao";
 import Catalogo from "./Pages/Catalogo";
 import Categorias from "./Pages/Categorias";
+import Historico from "./Pages/MeusPedidos";
 
 const Rotas = () => {
   return (
@@ -23,6 +24,7 @@ const Rotas = () => {
         {/* <Route path="/catalogo/" element={<Catalogo />} /> */}
         {/* catalogo/:categoria */}
         <Route path="/pedidos" element={<Pratos />} />
+        <Route path="/historico" element={<Historico />} />
       </Routes>
     </>
   );

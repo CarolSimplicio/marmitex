@@ -30,6 +30,9 @@ const Header = () => {
           <li>
             <Link to="/Pedidos">Pratos</Link>
           </li>
+          <li>
+            <Link to="/historico">Histórico de pedidos</Link>
+          </li>
         </ul>
       </nav>
     </header>
