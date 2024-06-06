@@ -2,7 +2,7 @@ import React from "react";
 import CadastroEndereco from "../Components/Endereco/CadastroEndereco";
 import TabelaEndereco from "../Components/Endereco/TabelaEndereco";
 import { Container, Row, Col } from 'react-bootstrap';
-
+// import '../Css/Perfil.css';
 
 
 const ListaUsuarios = () => {

@@ -3,14 +3,21 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Container, Col, Row, Button, Form, Tab, Tabs, Accordion, Badge  } from 'react-bootstrap';
 
+import BatataFrita from '../Img/batataFrita.jpg';
+import Macarrão from '../Img/macarrao.webp';
+import Arroz from '../Img/arroz.webp';
+import CarneouFrango from '../Img/carneeFrango.jpg';
+import OvoFrito from '../Img/ovoFrito.jpeg';
+import Farofa from '../Img/farofa.webp';
+import Cocacola from '../Img/carneeFrango.jpg';
+import Guarana from '../Img/ovoFrito.jpeg';
+import SucoUva from '../Img/farofa.webp';
+
+
 const CadastroForm = () => {
   const [formData, setFormData] = useState({
-    nome: '',
-    email: '',
-    cpf: '',
-    endereco: '',
-    telefone: '',
-    senha: ''
+    qtd: '',
+    precototal: ''
   });
 
   const handleChange = (e) => {
@@ -28,18 +35,70 @@ const CadastroForm = () => {
       alert('Cadastro criado com sucesso!');
       // Limpar o formulário após o envio bem-sucedido
       setFormData({
-        nome: '',
-        email: '',
-        cpf: '',
-        endereco: '',
-        telefone: '',
-        senha: ''
+        qtd: '',
+        precototal: ''
       });
     } catch (error) {
-      console.error('Erro ao criar cadastro:', error);
-      alert('Erro ao criar cadastro. Verifique o console para mais detalhes.');
+      console.error('Erro ao criar pedido:', error);
+      alert('Erro ao criar pedido. Verifique o console para mais detalhes.');
     }
   };
+
+
+
+  const [adicionais, setadicionais] = useState([
+    {
+        foto: BatataFrita,
+        nome: "Batata frita",
+        preco: "+ R$10,00"
+    }, {
+        foto: Macarrão,
+        nome: "Macarrão",
+        preco: "+ R$15,00"
+    }, {
+        foto: Arroz,
+        nome: "Arroz",
+        preco: "+ R$6,50"
+    }, {
+        foto: CarneouFrango,
+        nome: "Carne ou frango",
+        preco: "+ R$20,00"
+    }, {
+        foto: OvoFrito,
+        nome: "Ovo frito",
+        preco: "+ R$7,00"
+    }, {
+        foto: Farofa,
+        nome: "Farofa",
+        preco: "+ R$3,00"
+    }
+]);
+
+const [bebidas, setbebidas] = useState([
+  {
+      foto: BatataFrita,
+      nome: "Batata frita",
+      preco: "+ R$10,00"
+  }, {
+      foto: Macarrão,
+      nome: "Macarrão",
+      preco: "+ R$15,00"
+  }, {
+      foto: Arroz,
+      nome: "Arroz",
+      preco: "+ R$6,50"
+  }, {
+      foto: CarneouFrango,
+      nome: "Carne ou frango",
+      preco: "+ R$20,00"
+  }, {
+      foto: OvoFrito,
+      nome: "Ovo frito",
+      preco: "+ R$7,00"
+  }
+]);
+
+
 
 
   // const TabelaCadastro = () => {
@@ -82,51 +141,15 @@ const CadastroForm = () => {
                 <Accordion.Item eventKey="0">
                   <Accordion.Header>Porções</Accordion.Header>
                   <Accordion.Body>
-                    
-                    
-                  <Form>
-                    {['checkbox'].map((type) => (
-                    <div key={`reverse-${type}`} className="mb-3">
-                      <Form.Check
-                        label="Batata frita"
-                        name="group1"
-                        type={type}
-                        id={`reverse-${type}-1`}
-                      />
-                      <Form.Check
-                        label="Macarrão"
-                        name="group1"
-                        type={type}
-                        id={`reverse-${type}-2`}
-                      />
-                      <Form.Check
-                        label="Arroz"
-                        name="group1"
-                        type={type}
-                        id={`reverse-${type}-3`}
-                      />
-                      <Form.Check
-                        label="Carne ou frango"
-                        name="group1"
-                        type={type}
-                        id={`reverse-${type}-4`}
-                      />
-                      <Form.Check
-                        label="Ovo frito"
-                        name="group1"
-                        type={type}
-                        id={`reverse-${type}-5`}
-                      />
-                      <Form.Check
-                        label="Farofa"
-                        name="group1"
-                        type={type}
-                        id={`reverse-${type}-6`}
-                      />
-                    </div>
-                  ))}
-                </Form>
 
+                  <Form>
+                    {adicionais.map((conteudo) => (
+                            <div className="centralizar">
+                                    <img className="img-fora" src={conteudo.foto} />
+                                    <h3 className="nomeprod"> {conteudo.nome} {conteudo.preco}</h3>
+                              </div>
+                    ))}
+                </Form>
 
 
                   </Accordion.Body>
@@ -137,6 +160,17 @@ const CadastroForm = () => {
                     
                     
                   <Form>
+
+                  {bebidas.map((conteudo,) => (
+                      <div className="centralizar">
+                              <img className="img-fora" src={conteudo.foto} />
+                              <h3 className="nomeprod"> {conteudo.nome} {conteudo.preco}</h3>
+                        </div>
+                    ))}
+
+
+{/* 
+
                     {['checkbox'].map((type) => (
                     <div key={`reverse-${type}`} className="mb-3">
                       <Form.Check
@@ -158,7 +192,7 @@ const CadastroForm = () => {
                         id={`reverse-${type}-9`}
                       />
                     </div>
-                  ))}
+                  ))} */}
                 </Form>
                   </Accordion.Body>
                 </Accordion.Item>
@@ -170,9 +204,10 @@ const CadastroForm = () => {
 
             {/* QUANTIDADE E PREÇO DO PEDIDO */}
 
-
-          <Form.Control type="number" name="qtd" placeholder="Quantidade" value={formData.qtd} onChange={handleChange} />
-          <Form.Control type="number" name="precototal" placeholder="PreçoTotal" value={formData.preco} />
+            <h5>Quantidade de pratos:</h5>
+          <Form.Control type="number" name="qtd" value={formData.qtd} onChange={handleChange} />
+            <h5>Preço:</h5>
+          <h2 value={formData.precototal} />
           <Button type="submit">Fazer pedido</Button>
         </Col>
       </Row>
