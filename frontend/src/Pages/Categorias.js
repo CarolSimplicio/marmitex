@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
+import "../CSS/Categorias.css"
 
 const Categorias = () => {
     
@@ -27,10 +28,10 @@ useEffect(() => {
 
     return (
     <>
-        <div>
+        <div className="categoriaEspaco">
                 {categorias.map((categoria, index) => (
                     <div key={index} className="category__item">
-                        <h2><Link to={`/catalogo/${categoria}`}>{categoria}</Link></h2>
+                        <h2 className="categoriaTexto"><Link to={`/catalogo/${categoria}`} className="categoriaLink">{categoria}</Link></h2>
                     </div>
                 ))}
             </div>
