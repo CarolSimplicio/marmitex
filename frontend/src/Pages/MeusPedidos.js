@@ -1,16 +1,16 @@
-//Cadastro
+//Historico
 import React from "react";
-import CadastroForm from "../Components/CadastroForm";
+import Historico from "../Components/HistoricoPedidos";
 
-const Cadastro = () => {
+const historico = () => {
   return (
     <>
       <div>
-        <h2>Página Cadastro</h2>
-        <CadastroForm />
+        <h2>Página Historico</h2>
+        <Historico />
       </div>
     </>
   );
 };
 
-export default Cadastro;
+export default historico;

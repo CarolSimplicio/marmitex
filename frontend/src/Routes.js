@@ -7,6 +7,7 @@ import TabelaUsuarios from "./Pages/ListaUsuarios";
 import Perfil from "./Pages/Perfil";
 import Pratos from "./Pages/Descricao";
 import Catalogo from "./Pages/Catalogo";
+import Historico from "./Pages/MeusPedidos";
 
 const Rotas = () => {
   return (
@@ -19,6 +20,7 @@ const Rotas = () => {
         <Route path="/perfil" element={<Perfil />} />
         <Route path="/catalogo" element={<Catalogo />} />
         <Route path="/pedidos" element={<Pratos />} />
+        <Route path="/historico" element={<Historico />} />
       </Routes>
     </>
   );
