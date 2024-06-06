@@ -5,7 +5,6 @@ const cors = require('cors');
 
 // Importa as rotas do backend
 const prato = require('./Prato');
-
 const app = express();
 const port = 3001; // Defina a porta que deseja utilizar
 
@@ -15,6 +14,9 @@ app.use(cors());
 
 // Usa as rotas do backend
 // app.use('/', routes);
+app.use('/', prato);
+
+// Usa as rotas do backend
 app.use('/', prato);
 
 app.listen(port, () => {
