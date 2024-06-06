@@ -21,6 +21,7 @@ const Rotas = () => {
         <Route path="/perfil" element={<Perfil />} />
         <Route path="/categorias" element={<Categorias />} />
         <Route path="/catalogo/:categoria" element={<Catalogo />} />
+        <Route path="/detalhes/:idPrato" component={<Pratos />} />
         {/* <Route path="/catalogo/" element={<Catalogo />} /> */}
         {/* catalogo/:categoria */}
         <Route path="/pedidos" element={<Pratos />} />

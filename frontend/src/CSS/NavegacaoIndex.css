@@ -1,0 +1,11 @@
+.navbar.active {
+    background: rgb(9, 78, 14) !important;
+    transition: ease-out 0.2s;
+    
+}
+
+.navbar a {
+    text-decoration: none !important;
+    color: white;
+    opacity: 75%;
+}

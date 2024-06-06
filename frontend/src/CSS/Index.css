@@ -1,0 +1,189 @@
+.imgBanner {
+    width: 100%;
+}
+
+.botaoBanner {
+    position: absolute;
+    margin-top: 35%;
+    margin-left: 10%;
+    border-radius: 30px;
+    padding: 10px 50px 20px;
+    font-size: 30px;
+    background-color: rgb(9, 78, 14);
+    color: white;
+    border: none;
+}
+
+.redeSocial {
+    position: absolute;
+    margin-top: 44%;
+    margin-left: 11%;
+    width: 50px;
+}
+
+.redeSocialIn {
+    position: absolute;
+    margin-top: 44%;
+    margin-left: 11%;
+    width: 50px;
+}
+
+.redeSocialTel {
+    position: absolute;
+    margin-top: 44%;
+    margin-left: 11%;
+    width: 50px;
+}
+
+
+.botaoBanner:hover {
+    background-color: rgb(17, 104, 23);
+}
+
+.foto {
+    width: 50%;
+}
+
+.slickimg {
+    width: 104%;
+}
+
+.fotomodal {
+    margin-bottom: 5%;
+    margin-left: 28%;
+}
+
+.horanormal {
+    margin-left: 13%;
+}
+
+@media (max-width: 768px) {
+
+    .slick {
+        margin-right: 10%;
+        margin-left: 10%;
+    }
+
+    .card::after {
+        display: none;
+    }
+
+    .botaoBanner {
+        position: absolute;
+        margin-top: 35%;
+        color: rgb(255, 255, 255);
+        font-size: 20px;
+        margin-left: 13%;
+        padding: 5px 30px 6px;
+        font-size: 10px;
+    }
+
+    .redeSocial {
+        position: absolute;
+        margin-top: 44%;
+        margin-left: 16%;
+        width: 20px;
+    }
+    
+    .redeSocialIn {
+        position: absolute;
+        margin-top: 44%;
+        margin-left: 24%;
+        width: 20px;
+    }
+    
+    .redeSocialTel {
+        position: absolute;
+        margin-top: 44%;
+        margin-left: 32%;
+        width: 20px;
+    }    
+
+    .titulo {
+        display: grid;
+        place-items: center;
+    }
+
+    .fotomodal {
+        margin-bottom: 5%;
+        margin-left: -2%;
+    }
+
+    .horanormal {
+        margin-left: 0%;
+    }
+
+}
+
+@media (max-width: 300px) {
+
+    .botaoBanner {
+        display: none;
+    }
+
+}
+
+@media (min-width:769px) and (max-width: 1020px) {
+
+    .botaoBanner {
+        position: absolute;
+        margin-top: 14%;
+        color: white;
+        margin-right: 30%;
+        font-size: 55px;
+    }
+
+}
+
+.card {
+    position: relative;
+    height: 12.5em;
+    cursor: pointer;
+    transition: all 120ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent !important;
+    border: none !important;
+
+}
+
+.card::after {
+    content: "Visite";
+    padding-top: 0.35em;
+    position: absolute;
+    background: rgb(78, 39, 9);
+    color: #fff;
+    height: 2.5em;
+    width: 100%;
+    transition: ease-out 80ms;
+    font-weight: 600;
+    text-transform: uppercase;
+    opacity: 0;
+    margin-left: -50%;
+}
+
+.card:hover::after {
+    bottom: 0;
+    opacity: 1;
+}
+
+.card:active {
+    transform: scale(0.98);
+}
+
+.card:active::after {
+    content: "eba";
+    height: 3.125em;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.titulo {
+    color: #372502;
+}
