@@ -6,6 +6,7 @@ const HistoricoItem = ({ historico, onDelete }) => {
       <td>{historico.id}</td>
       <td>{historico.cliente}</td>
       <td>{historico.prato}</td>
+      <td>{historico.adicionais}</td>
       <td>{historico.quantidade}</td>
       <td>{historico.preco}</td>
       <td>
