@@ -12,16 +12,6 @@ const Categorias = () => {
 
 const [categorias, setCategorias] = useState([]);
 
-//     useEffect(() => {
-//     const pegaCategoria = async () => {
-//         const res = await axios.get('http://localhost:3001/pratosCategoria')
-//         setCategorias(res.data.categoria)
-//         console.log("setCategoria: ", categorias)
-//         console.log("res.data", res.data);
-//     }
-//     pegaCategoria()
-// }, [])
-
 useEffect(() => {
     const pegaCategorias = async () => {
         try {
@@ -45,10 +35,6 @@ useEffect(() => {
                 ))}
             </div>
         {/* rota de teste que funciona <h2 href="#" onClick={routeChange}><a>Frango</a></h2> */}
-        
-
-
-        <h2><a href="#" >Carne</a></h2>
     </>
     )
 };
