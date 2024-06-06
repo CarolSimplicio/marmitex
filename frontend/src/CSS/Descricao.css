@@ -1,0 +1,34 @@
+.centralizar {
+    display: block;
+    text-align: -webkit-center;
+  }
+
+.containerAdd {
+    background-color: #ffdea1;
+    padding: 10px 0px;
+    height: 130px;
+}
+.textoAdd {
+    font-size: 18px;
+}
+.descAdd {
+    font-size: 18px;
+    opacity: .7;
+}
+.imgAdd {
+    border-radius: 10px;
+    box-shadow: rgba(167, 91, 25, 0.24) 0px 3px 8px;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.form-check-input[type=checkbox] {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+}
+
+.titulo1Add {
+  font-size: 22px;
+}

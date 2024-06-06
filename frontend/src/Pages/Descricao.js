@@ -1,6 +1,7 @@
 //Pedidos
 import React from "react";
 import PedidosForm from "../Components/PedidosForm";
+import '../CSS/Descricao.css';
 
 const Pedidos = () => {
   return (
