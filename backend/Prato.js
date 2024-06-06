@@ -4,7 +4,7 @@ const router = express.Router();
 
 // Rota para listar todos os registros
 router.get('/pratos', (req, res) => {
-  connection.query('SELECT * FROM pratos', (err, results) => {
+  connection.query('SELECT * FROM Pratos', (err, results) => {
     if (err) {
       console.error('Erro ao buscar os registros:', err);
       res.status(500).json({ error: 'Erro ao buscar os registros' });
@@ -14,10 +14,11 @@ router.get('/pratos', (req, res) => {
   });
 });
 
-// Rota para buscar um registro específico pelo ID
-router.get('/pratos/:id', (req, res) => {
-  const { idPrato } = req.params;
-  connection.query('SELECT * FROM pratos WHERE idPrato = ?', [idPrato], (err, results) => {
+
+// Rota para buscar registros pela categoria
+router.get('/pratosCategoria/:categoria', (req, res) => {
+  const { categoria } = req.params;
+  connection.query('SELECT * FROM Pratos WHERE categoria = ?', [categoria], (err, results) => {
     if (err) {
       console.error('Erro ao buscar o registro:', err);
       res.status(500).json({ error: 'Erro ao buscar o registro' });
@@ -27,9 +28,27 @@ router.get('/pratos/:id', (req, res) => {
       res.status(404).json({ error: 'Registro não encontrado' });
       return;
     }
-    res.json(results[0]);
+    res.json(results);
   });
 });
+
+
+// // Rota para buscar um registro específico pela categoria
+// router.get('/pratos/:id', (req, res) => {
+//   const { idPrato } = req.params;
+//   connection.query('SELECT * FROM Pratos WHERE idPrato = ?', [idPrato], (err, results) => {
+//     if (err) {
+//       console.error('Erro ao buscar o registro:', err);
+//       res.status(500).json({ error: 'Erro ao buscar o registro' });
+//       return;
+//     }
+//     if (results.length === 0) {
+//       res.status(404).json({ error: 'Registro não encontrado' });
+//       return;
+//     }
+//     res.json(results[0]);
+//   });
+// });
 
 // // Rota para criar um novo registro
 // router.post('/pratos', (req, res) => {

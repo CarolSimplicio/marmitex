@@ -1,33 +1,60 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useParams } from 'react-router-dom';
 
 import { Card } from "react-bootstrap";
 
 const ListaCatalogo = () => {
+
+    const {categoria} = useParams(); 
+    
+    useEffect(() => {
+        const getItems = async () => {
+            try {
+                const result = await axios.get('http://localhost:3001/pratos');
+                const allItems = result.data; // A resposta é um array de pratos
+                const categoryItems = allItems.filter(prato => prato.categoria === categoria);
+                setPratos(categoryItems);
+            } catch (error) {
+                console.error("Erro ao buscar pratos:", error);
+            }
+        };
+        getItems();
+    }, [categoria]);
+
+
+
+
     const [pratos, setPratos] = useState([]);
 
-    useEffect(() => {
-        const fetchData = async () => {
-          try {
-            const { data } = await axios.get("http://localhost:3001/pratos");
-            setPratos(data);
-          } catch (error) {
-            console.error("Erro ao buscar usuários:", error); // Adiciona este log de erro
-          }
-        };
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //       try {
+    //         const { data } = await axios.get("http://localhost:3001/pratos");
+    //         setPratos(result.data.entries);
+    //         // setItems(result.data.entries)
+    //         console.log("result.entries", result.data.entries);
+    //       } catch (error) {
+    //         console.error("Erro ao buscar usuários:", error); // Adiciona este log de erro
+    //       }
+    //     };
     
-        fetchData();
-      }, []);
+    //     fetchData();
+    //   }, []);
 
     return (
         <>
-        {pratos.map((prato) => (
+        {pratos.map((prato, index) => (
             <>
-                <h6>{prato.idPrato}</h6>
-                <h6>{prato.nome}</h6>
-                <h6>{prato.categoria}</h6>
-                <h6>{prato.descricao}</h6>
-                <h6>{prato.preco}</h6>
+                <Card key={prato.categoria} style={{ width: '18rem' }}>
+                  <Card.Img variant="top" src="holder.js/100px180" />
+                  <Card.Body>
+                    <Card.Title>{prato.nome}</Card.Title>
+                    <Card.Text>{prato.descricao}
+                    </Card.Text>
+                    <b>{prato.preco}</b>
+                  </Card.Body>
+                </Card>
             </>
         ))}
 
