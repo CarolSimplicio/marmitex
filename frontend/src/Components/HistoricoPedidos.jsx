@@ -3,13 +3,13 @@ import axios from "axios";
 import { Button, Table  } from 'react-bootstrap';
 
 const TabelaCadastroProd = () => {
-  const [pedidos, setpedidos] = useState([]);
+  const [pedidos, setPedidos] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const { data } = await axios.get("http://localhost:3001/pedidos");
-        setpedidos(data);
+        setPedidos(data);
       } catch (error) {
         console.error("Erro ao buscar pedidos:", error);
       }
@@ -23,7 +23,7 @@ const TabelaCadastroProd = () => {
       await axios.delete(`http://localhost:3001/pedidos/${idPedido}`);
       // Atualiza a lista de pedidos após a exclusão
       const { data } = await axios.get("http://localhost:3001/pedidos");
-      setpedidos(data);
+      setPedidos(data);
       console.log("Pedido excluído com sucesso!");
     } catch (error) {
       console.error("Erro ao excluir pedido:", error);
@@ -38,6 +38,7 @@ const TabelaCadastroProd = () => {
             <th>ID</th>
             <th>Cliente</th>
             <th>Prato</th>
+            <th>Adicionais</th>
             <th>Quantidade</th>
             <th>Preço</th>
             <th>Ação</th>
@@ -49,12 +50,13 @@ const TabelaCadastroProd = () => {
               <td>{historico.idPedido}</td>
               <td>{historico.nomeCliente}</td>
               <td>{historico.nomePrato}</td>
+              <td>{historico.adicionais}</td>
               <td>{historico.quantidade}</td>
-              <td>{historico.preco}</td>
-
+              <td>{parseFloat(historico.preco).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</td>
+              
               <td>
-                <Button variant="success" onClick={() => handleExcluirProd(historico.idProduto)}>Concluido</Button>
-                <Button variant="danger" onClick={() => handleExcluirProd(historico.idProduto)}>Excluir</Button>
+                <Button variant="success" onClick={() => handleExcluirProd(historico.idPedido)}>Concluido</Button>
+                <Button variant="danger" onClick={() => handleExcluirProd(historico.idPedido)}>Excluir</Button>
               </td>
             </tr>
           ))}
