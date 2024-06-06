@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 import { Card } from "react-bootstrap";
 
@@ -12,7 +12,7 @@ const ListaCatalogo = () => {
         const getItems = async () => {
             try {
                 const result = await axios.get('http://localhost:3001/pratos');
-                const allItems = result.data; // A resposta é um array de pratos
+                const allItems = result.data;
                 const categoryItems = allItems.filter(prato => prato.categoria === categoria);
                 setPratos(categoryItems);
             } catch (error) {
@@ -46,13 +46,14 @@ const ListaCatalogo = () => {
         <>
         {pratos.map((prato, index) => (
             <>
-                <Card key={prato.categoria} style={{ width: '18rem' }}>
+                <Card key={prato.idPrato} style={{ width: '18rem' }}>
                   <Card.Img variant="top" src="holder.js/100px180" />
                   <Card.Body>
                     <Card.Title>{prato.nome}</Card.Title>
                     <Card.Text>{prato.descricao}
                     </Card.Text>
                     <b>{prato.preco}</b>
+                    <Link to={`/detalhes/${prato.idPrato}`}>Ver detalhes</Link>
                   </Card.Body>
                 </Card>
             </>
