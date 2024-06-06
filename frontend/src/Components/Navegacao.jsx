@@ -9,23 +9,26 @@ const Header = () => {
           <li>
             <Link to="/">Home</Link>
           </li>
-          <li>
+          {/* <li>
             <Link to="/contato">Contato</Link>
-          </li>
+          </li> */}
           {/* <li>
             <Link to="/cadastro">Cadastro</Link>
           </li> */}
-          <li>
+          {/* <li>
             <Link to="/listaUsuarios">Lista de Usuários</Link>
-          </li>
+          </li> */}
           <li>
             <Link to="/Perfil">Perfil</Link>
           </li>
           <li>
-            <Link to="/catalogo">Catálogo</Link>
+            <Link to="/Categorias">Categorias</Link>
           </li>
           <li>
             <Link to="/Pedidos">Pratos</Link>
+          </li>
+          <li>
+            <Link to="/historico">Histórico de pedidos</Link>
           </li>
         </ul>
       </nav>
