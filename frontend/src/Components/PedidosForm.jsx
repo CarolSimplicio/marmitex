@@ -5,12 +5,8 @@ import { Container, Col, Row, Button, Form, Tab, Tabs, Accordion, Badge  } from 
 
 const CadastroForm = () => {
   const [formData, setFormData] = useState({
-    nome: '',
-    email: '',
-    cpf: '',
-    endereco: '',
-    telefone: '',
-    senha: ''
+    qtd: '',
+    preco: ''
   });
 
   const handleChange = (e) => {
