@@ -1,7 +1,6 @@
 // Descrição do.jsx
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
 import { Container, Col, Row, Button, Form, Tab, Tabs, Accordion, Badge, ListGroup } from 'react-bootstrap';
 
 import BatataFrita from '../Img/batataFrita.jpg';
@@ -16,23 +15,6 @@ import SucoUva from '../Img/sucodeuva.webp';
 
 
 const CadastroForm = () => {
-
-  const { idPrato } = useParams();
-  const [prato, setPrato] = useState(null);
-
-  useEffect(() => {
-    const getPrato = async () => {
-      try {
-        const result = await axios.get(`http://localhost:3001/pratos/${idPrato}`);
-        setPrato(result.data);
-      } catch (error) {
-        console.error("Erro ao buscar detalhes do prato:", error);
-      }
-    };
-    getPrato();
-  }, [idPrato]);
-
-
   const [formData, setFormData] = useState({
     qtd: '',
     precototal: 0
@@ -149,15 +131,15 @@ const handleSubmit = async (e) => {
         <Col md={6} sm={12}> 
           {/* IMAGEM, NOME E CATEGORIA DO PRATO ESCOLHIDO NO CATALOGO*/}
 
-          <img src={prato.imagem} alt={prato.nome} />
-          <h1 value={prato.nome} /><Badge bg="danger" value={prato.categoria}></Badge>
+          <img alt='prato'/>
+          <h1 value={formData.nome} /><Badge bg="danger" value={formData.categoria}></Badge>
         </Col>
         <Col>
 
           {/* DESCRIÇÃO DO PRATO + TUTORIAL DE COMO ESQUENTAR */}
           <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" className="mb-3">
             <Tab eventKey="descricao" title="Descricao">
-              <h1 value={prato.descricao} />
+              <h1 value={formData.descricao} />
 
 
               <h1 className='titulo1Add my-3'>Quibes e Lasanhas</h1>
@@ -284,7 +266,8 @@ const handleSubmit = async (e) => {
 
             <h5 className='my-3'>Quantidade de pratos:</h5>
           <Form.Control type="number" name="qtd" value={formData.qtd} onChange={handleChange} />
-          <h5>Preço:</h5>
+            <h5>Preço:</h5>
+          {/* <h2 value={valorTotal} /> */}
           <h2>{calculateTotal().toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</h2>
           <Button type="submit">Fazer pedido</Button>
         </Col>
@@ -292,5 +275,7 @@ const handleSubmit = async (e) => {
     </Form>
   );
 };
+
+export default CadastroForm;
 
 export default CadastroForm;
