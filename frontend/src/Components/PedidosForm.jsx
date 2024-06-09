@@ -277,5 +277,3 @@ const handleSubmit = async (e) => {
 };
 
 export default CadastroForm;
-
-export default CadastroForm;

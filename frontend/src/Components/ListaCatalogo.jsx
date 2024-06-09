@@ -47,7 +47,7 @@ const ListaCatalogo = () => {
         {pratos.map((prato, index) => (
             <>
                 <Card key={prato.idPrato} style={{ width: '18rem' }}>
-                  <Card.Img variant="top" src="holder.js/100px180" />
+                  <Card.Img variant="top" src={prato.imagem} alt={prato.nome}/>
                   <Card.Body>
                     <Card.Title>{prato.nome}</Card.Title>
                     <Card.Text>{prato.descricao}
