@@ -141,7 +141,7 @@ function Responsive() {
                         <div className='slick'>
                             <Slider {...settings}>
                                 {slides.map((d) => (
-                                    <button key={d.id} className="card" onClick={() => handleOpenModal(d.id)}>
+                                    <button key={d.id} className="cardHome" onClick={() => handleOpenModal(d.id)}>
                                         <div className="image">
                                             <img src={d.img} className='slickimg' alt="" />
                                             <p>{d.nome}</p>

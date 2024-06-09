@@ -64,7 +64,7 @@
         margin-left: 10%;
     }
 
-    .card::after {
+    .cardHome::after {
         display: none;
     }
 
@@ -135,7 +135,7 @@
 
 }
 
-.card {
+.cardHome {
     position: relative;
     height: 12.5em;
     cursor: pointer;
@@ -148,7 +148,7 @@
 
 }
 
-.card::after {
+.cardHome::after {
     content: "Visite";
     padding-top: 0.35em;
     position: absolute;
@@ -163,16 +163,16 @@
     margin-left: -50%;
 }
 
-.card:hover::after {
+.cardHome:hover::after {
     bottom: 0;
     opacity: 1;
 }
 
-.card:active {
+.cardHome:active {
     transform: scale(0.98);
 }
 
-.card:active::after {
+.cardHome:active::after {
     content: "eba";
     height: 3.125em;
 }
