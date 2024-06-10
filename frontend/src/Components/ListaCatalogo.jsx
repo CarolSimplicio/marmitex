@@ -4,6 +4,8 @@ import { useParams, Link } from 'react-router-dom';
 
 import { Card } from "react-bootstrap";
 
+import "../CSS/Catalogo.css"
+
 const ListaCatalogo = () => {
 
     const {categoria} = useParams(); 
@@ -46,14 +48,16 @@ const ListaCatalogo = () => {
         <>
         {pratos.map((prato, index) => (
             <>
-                <Card key={prato.idPrato} style={{ width: '18rem' }}>
+                <Card className="cardCatalogo" key={prato.idPrato} style={{ width: '18rem' }}>
                   <Card.Img variant="top" src={prato.imagem} alt={prato.nome}/>
                   <Card.Body>
                     <Card.Title>{prato.nome}</Card.Title>
                     <Card.Text>{prato.descricao}
                     </Card.Text>
-                    <b>{prato.preco}</b>
-                    <Link to={`/detalhes/${prato.idPrato}`}>Ver detalhes</Link>
+                    <div className="footerCardCatalogo" >
+                      <b>{prato.preco}</b>
+                      <button className="btnDetalhes"><Link to={`/detalhes/${prato.idPrato}`}>Ver detalhes</Link></button>
+                    </div>
                   </Card.Body>
                 </Card>
             </>
